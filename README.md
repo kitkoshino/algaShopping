@@ -1,5 +1,9 @@
-<h2 align="center">Project developed in 2 days during "AlgaWorks - Desafio React" </h2>
-
+<div align="center">
+<img src="./src/assets/print.jpg" width="400"/>
+</div>
+<br/>
+<h3 align="center">Project developed in 2 days during "AlgaWorks - Desafio React" </h3>
+<br/>
 
 # :computer: Technologies
 
