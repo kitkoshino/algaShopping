@@ -20,9 +20,9 @@
 ### Run Project
 
 ```bash
-    #Instalar dependências:
+    #Install dependencies:
     $ npm install
 
-    # Rodar Aplicação:
+    # Run application:
     $ npm start
 ```
