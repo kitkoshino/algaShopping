@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./src/assets/print.jpg" width="400"/>
+<img src="./src/assets/print.jpg" width="480"/>
 </div>
 <br/>
 <h3 align="center">Project developed in 2 days during "AlgaWorks - Desafio React" </h3>
