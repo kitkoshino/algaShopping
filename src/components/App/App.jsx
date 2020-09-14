@@ -5,7 +5,6 @@ import AppContainer from '../AppContainer/AppContainer';
 import LineChart from '../../shared/LineChart/LineChart';
 import ShoppingList from '../ShoppingList';
 import extractPercentage from '../../utils/extractPercentage';
-import Calculator from '../Calculator';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   selectAllProducts,
@@ -101,7 +100,6 @@ function App() {
                   currency: 'BRL'
                 })}
               </div>
-              <Calculator />
             </div>
           }
         />
