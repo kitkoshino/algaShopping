@@ -8,7 +8,7 @@
 # :computer: Technologies
 
 - Javascript
-- React Js
+- React Js / Redux
 
 # :video_game: Run
 
