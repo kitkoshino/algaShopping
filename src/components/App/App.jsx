@@ -4,42 +4,27 @@ import AppHeader from '../AppHeader/AppHeader';
 import AppContainer from '../AppContainer/AppContainer';
 import LineChart from '../../shared/LineChart/LineChart';
 import ShoppingList from '../ShoppingList';
-import productsMock from '../../mocks/products.json';
 import extractPercentage from '../../utils/extractPercentage';
 import Calculator from '../Calculator';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  selectAllProducts,
+  selectSelectedProducts,
+  selectSelectedProductsTotalPrice
+} from '../../store/Products/Products.selectors';
+import { toggleProduct } from '../../store/Products/Products.actions';
 
 function App() {
+  const dispatch = useDispatch();
+
   const colors = ['#62CBC6', '#00ABAD', '#00858C', '#006073', '#004D61'];
 
-  const [products, setProducts] = useState(productsMock.products);
-  const [selectedProducts, setSelectedProducts] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
-
-  useEffect(() => {
-    const newSelectedProducts = products.filter((product) => product.checked);
-
-    setSelectedProducts(newSelectedProducts);
-  }, [products]);
-
-  useEffect(() => {
-    const total = selectedProducts
-      .map((product) => product.price)
-      .reduce((a, b) => a + b, 0);
-
-    setTotalPrice(total);
-  }, [selectedProducts]);
+  const products = useSelector(selectAllProducts);
+  const selectedProducts = useSelector(selectSelectedProducts);
+  const totalPrice = useSelector(selectSelectedProductsTotalPrice);
 
   function handleToggle(id) {
-    const newProducts = products.map((product) => {
-      return product.id === id
-        ? {
-            ...product,
-            checked: !product.checked
-          }
-        : product;
-    });
-
-    setProducts(newProducts);
+    dispatch(toggleProduct(id));
   }
 
   return (
@@ -116,9 +101,7 @@ function App() {
                   currency: 'BRL'
                 })}
               </div>
-              
               <Calculator />
-
             </div>
           }
         />
