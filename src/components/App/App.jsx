@@ -42,7 +42,7 @@ function App() {
           middle={
             <ShoppingList
               title="sua lista de compras"
-              products={selectedProducts}
+              displayOnlySelected
               onToggle={handleToggle}
             />
           }
